@@ -1,7 +1,7 @@
 settings relating to a correction round
 example:
 <!--
-  <CorrectionRoundManager v-bind="settingsObject" @update="settingsObject = $event" :users="usersArray"/>
+  <CorrectionRoundManager v-bind="settingsObject" @update="settingsObject = $event" @cancel="cancelMethod" :users="usersArray"/>
 -->
 
 <template>
@@ -39,7 +39,7 @@ example:
     </div>
 
     <div class="footer">
-      <button class="btn green">Cancel</button>
+      <button class="btn green" @click="$emit('cancel')">Cancel</button>
       <input class="btn solid" :class="dataValid ? 'green' : 'red'" :disabled="!dataValid" type="submit" value="Save this correction round">
     </div>
 

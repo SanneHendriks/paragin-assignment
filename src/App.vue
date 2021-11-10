@@ -3,7 +3,7 @@
   <Modal v-model="modalOpen">
     <template v-slot:title>Add new correction round</template>
     <template v-slot:default>
-      <CorrectionRoundManager v-bind="settings" @update="settings = $event" :users="fakeUsers"/>
+      <CorrectionRoundManager v-bind="settings" @update="settings = $event" @cancel="modalOpen = false" :users="fakeUsers"/>
     </template>
   </Modal>
   <br>
